@@ -1,23 +1,41 @@
+package Compiti_Classi;
+
 class Anagrafico {
     public String nome;
     public String cognome;
+    private int eta;
+    private String lavoro;
 
-    private String email;
-
-    public void registro(String nome, String cognome, String email) {
+    public Anagrafico(String nome, String cognome, int eta, String lavoro) {
         this.nome = nome;
         this.cognome = cognome;
-        this.email = email;
+        this.eta = eta;
+        this.lavoro = lavoro;
+    }
+
+    public void registro(String nome, String cognome, String lavoro, int eta) {
+        this.nome = nome;
+        this.cognome = cognome;
+        this.eta = eta;
+        this.lavoro = lavoro;
 
     }
 
-    public String getEmail() {
+    public int getEta() {
 
-        return email;
+        return eta;
     }
 
     public String getNome() {
         return nome;
+    }
+
+    public String getLavoro() {
+        return lavoro;
+    }
+
+    public void setLavoro(String lavoro) {
+        this.lavoro = lavoro;
     }
 
     /*
@@ -34,14 +52,15 @@ class Anagrafico {
         this.cognome = cognome;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEta(int eta) {
+        this.eta = eta;
     }
 
     public void stampaInfo() {
         System.out.println(" Nome : " + nome);
         System.out.println(" Cognome : " + cognome);
-        System.out.println(" email : " + email);
+        System.out.println(" Età : " + eta + "anni");
+        System.out.println(" Lavoro : " + lavoro);
 
     }
 
