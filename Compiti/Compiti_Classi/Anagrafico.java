@@ -1,23 +1,27 @@
-package Compiti_Classi;
 
-class Anagrafico {
+class Anagrafico extends CurriculumAnagrafico {
     public String nome;
     public String cognome;
     private int eta;
-    private String lavoro;
 
-    public Anagrafico(String nome, String cognome, int eta, String lavoro) {
+    public Anagrafico(String nome, String cognome, int eta) {
+
+        // Passare i parametri al costruttore della superclasse
+        super("contatto di default", "competenze di default", "istruzione di default", "esperienza di default");
         this.nome = nome;
         this.cognome = cognome;
         this.eta = eta;
-        this.lavoro = lavoro;
+
     }
 
-    public void registro(String nome, String cognome, String lavoro, int eta) {
+    /*public CurriculumDati(String contatto, String competenze, String istruzione, String esperienza) {
+        super(contatto, competenze, istruzione, esperienza);
+    }*/
+
+    public void registro(String nome, String cognome, int eta) {
         this.nome = nome;
         this.cognome = cognome;
         this.eta = eta;
-        this.lavoro = lavoro;
 
     }
 
@@ -29,15 +33,6 @@ class Anagrafico {
     public String getNome() {
         return nome;
     }
-
-    public String getLavoro() {
-        return lavoro;
-    }
-
-    public void setLavoro(String lavoro) {
-        this.lavoro = lavoro;
-    }
-
     /*
      * public String getCognome() {
      * return cognome;
@@ -57,10 +52,11 @@ class Anagrafico {
     }
 
     public void stampaInfo() {
+        System.out.println("==========================");
         System.out.println(" Nome : " + nome);
         System.out.println(" Cognome : " + cognome);
         System.out.println(" Età : " + eta + "anni");
-        System.out.println(" Lavoro : " + lavoro);
+        System.out.println("==========================");
 
     }
 
