@@ -56,7 +56,7 @@ class Anagrafico extends CurriculumAnagrafico {
         System.out.println(" Nome : " + nome);
         System.out.println(" Cognome : " + cognome);
         System.out.println(" Età : " + eta + "anni");
-        System.out.println("==========================");
+        
 
     }
 

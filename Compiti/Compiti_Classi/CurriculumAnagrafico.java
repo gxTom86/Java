@@ -46,8 +46,12 @@ class CurriculumAnagrafico {
     
     public void stampaCurriculum() {
         System.out.println("Il mio contatto : " + contatto);
+        System.out.println(" ");
+
         System.out.println("Le mie Competenze : " + competenze);
+        System.out.println(" ");
         System.out.println("Istrzione : " + istruzione);
+        System.out.println(" ");
         System.out.println("Esperienza : " + esperienza);
 
     }
