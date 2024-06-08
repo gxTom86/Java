@@ -28,7 +28,7 @@ class Studente
 	{
 	System.out.println("Nome : " + nome);
 	System.out.println("Cognome : " + cognome);
-	System.out.println("Matricola : " + nome);
+	System.out.println("Matricola : " + matricola);
 	}
 
 }

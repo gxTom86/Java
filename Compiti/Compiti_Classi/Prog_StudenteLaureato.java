@@ -40,7 +40,7 @@ class Prog_StudenteLaureato
 		{
 			if(studenteLaureato[i].getNome == studente[j].getNome && studenteLaureato[i].getCognome == studente[j].getCognome)
 			{
-			System.out.println("studenteLaureato[i].stampaDati");
+			studenteLaureato[i].stampaDati;
 			}
 		}
 	}
