@@ -1,53 +1,63 @@
-
 import java.util.Scanner;
 
 class MainCd_02 {
-    Scanner input = new Scanner(System.in);
+
+    static Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
 
-        Cd_02 disco1 = new Cd_02(" ", 0);
-
+        Cd_02 disco1 = new Cd_02();
+        menu(disco1);// perchè si fa menu(disco1);
     }
 
-    public void dati(Cd_02 disco1) {
-
+    public static void menu(Cd_02 disco)// perchè si mette come paramtri "Cd_02 disco" 
+    {
         String scelta;
         String titolo;
         int durata = 0;
-
-        System.out.println("-+-+-+-+-+-+-+-+-+-");
-        System.out.println("1 Inserire Nuova canzone ");
-        System.out.println("2 Vedere disco ");
-        System.out.println("Uscire [*]");
-
-        scelta = input.nextLine();
-        System.out.print(" ");
-
         do {
+
+            System.out.println("\n -*-*-*-*-*-  MENU' di SCELTA  -*-*-*-*-*-");
+            System.out.println("\n 1. Inserisci nuova canzone");
+            System.out.println("\n 2. Stampa contenuto del CD");
+            // System.out.println("\n 3. Modifica titolo canzone");
+            // System.out.println("\n 4. Modifica durata canzone");
+            // System.out.println("\n 5. Cerca durata canzone");
+            System.out.println("\n *  USCITA");
+
+            System.out.print("\n Effettuare la scelta :  ");
+            scelta = input.nextLine();
+
             switch (scelta) {
                 case ("1"):
-                    System.out.print("Inserire il titolo : ");
-                    titolo = input.nextLine();
-                    disco1.setTitolo(titolo);
 
-                    System.out.println("Inserisci la durata : ");
-                    durata = Integer.parseInt(input.nextLine());
-                    disco1.setDurata(durata);
-
+                    if (disco.numCanzoni() < 10)// perchè disco.numCanzoni()?
+                     {
+                        System.out.print("Insersci il titolo : ");
+                        titolo = input.nextLine();
+                        System.out.print("Inserisci la durata :");
+                        durata = Integer.parseInt(input.nextLine());
+                        disco.setCanzone(titolo, durata); // cos'è disco.setCanzone(titolo, durata);
+                    } else {
+                        System.out.print("\n Il CD contiene già 10 brani, non puoi inserirne altri!");
+                    }
                     break;
 
                 case ("2"):
-                    System.out.println("Ecco la set-list : ");
-                    System.out.println("");
 
+                    disco.stampaInfo();
+
+                    break;
+
+                case ("*"):
+
+                    System.out.print(" Uscita ");
                     break;
 
                 default:
-                    // if (!scelta.equals("*")) {
-                    System.out.println(" Input non valido ");
-                    // }
+                    System.out.println("\n Scelta non valida!");
                     break;
+
             }
 
         } while (!scelta.equals("*"));

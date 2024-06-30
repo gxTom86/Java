@@ -1,0 +1,32 @@
+Classe Main
+
+Funzione: Configura la finestra principale (JFrame) del gioco.
+Dettagli:
+Imposta il titolo della finestra.
+Impedisce la ridimensione della finestra.
+Aggiunge un'istanza di GamePanel alla finestra.
+Impacchetta la finestra in base alle dimensioni preferite dei componenti interni.
+Centra la finestra sullo schermo.
+Rende la finestra visibile.
+
+Classe GamePanel
+
+Funzione: Gestisce l'interfaccia e il ciclo di vita del gioco.
+Dettagli:
+Costruttore: Imposta le dimensioni preferite, il colore di sfondo, e inizializza PlayManager.
+Game Loop: Gestito nel metodo run() che viene eseguito in un nuovo thread.
+Calcola l'intervallo di disegno in base ai frame per secondo.
+Utilizza una variabile delta per gestire il tempo di aggiornamento e di disegno.
+Chiama update() per aggiornare la logica del gioco e repaint() per ridisegnare il gioco.
+Metodo update(): Chiama il metodo update() di PlayManager.
+Metodo paintComponent(): Responsabile per disegnare gli elementi del gioco. Utilizza Graphics2D per un rendering avanzato.
+
+Classe PlayManager
+
+Funzione: Gestisce le dimensioni e il disegno delle aree di gioco.
+Dettagli:
+Costruttore: Calcola e imposta i confini dell'area principale di gioco.
+Metodo draw(Graphics2D g2): Disegna i confini dell'area di gioco e altre componenti grafiche come il frame per il prossimo pezzo di Tetris.
+Punto di Riferimento Graphics2D g2
+In GamePanel, il metodo paintComponent() passa un oggetto Graphics che viene castato a Graphics2D per un controllo più fine del rendering grafico.
+Graphics2D (g2) viene poi passato al metodo draw() di PlayManager per disegnare elementi grafici specifici.

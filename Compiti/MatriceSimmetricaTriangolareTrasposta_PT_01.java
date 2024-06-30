@@ -57,9 +57,14 @@ class MatriceSimmetricaTriangolareTrasposta_PT_01 {
         }
 
         if (triangAlta)
+        {
             System.out.println("\n La matrice è Triangolare ALTA");
+        }
+            
         else
-            System.out.println("\n La matrice NON è Triangolare ALTA");
+            {
+                System.out.println("\n La matrice NON è Triangolare ALTA");
+            }
 
         // Creazione di una matrice triangolare bassa (procedura simile a quella precedente ma con condizioni invertite)
 
