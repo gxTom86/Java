@@ -32,6 +32,7 @@ public class Mino {
     public Block b[] = new Block[4];
     public Block tempB[] = new Block[4];
     int autoDropCounter = 0;
+    public int direction = 1; // Hanno 4 direzioni (1/2/3/4)
 
     public void create(Color c) {
         b[0] = new Block(c);
@@ -49,12 +50,58 @@ public class Mino {
     }
 
     public void updateXY(int direction) {
+
+        this.direction = direction;
+        /*
+         * Perchè non aggiornare solo b invece di aggiornare anche tempB?
+         * Perchè c'è bisogno di getire la collisione, se la collisione avviene quando
+         * si sta ruotando il mino , dobbiamo cancellare la rotazione, se si ha già
+         * aggiornato
+         * X e Y non possiamo rimeterli alla loro posizione iniziale
+         */
+        b[0].x = tempB[0].x;
+        b[0].y = tempB[0].y;
+        b[1].x = tempB[1].x;
+        b[1].y = tempB[1].y;
+        b[2].x = tempB[2].x;
+        b[2].y = tempB[2].y;
+        b[3].x = tempB[3].x;
+        b[3].y = tempB[3].y;
+    }
+
+    public void direction1() {
+    }
+
+    public void direction2() {
+    }
+
+    public void direction3() {
+    }
+
+    public void direction4() {
     }
 
     public void update() {
 
         // Move the Mino
         if (KeyHandler.upPressed) {
+
+            switch (direction) {
+                case 1:
+                    direction2();
+                    break;
+                case 2:
+                    direction3();
+                    break;
+                case 3:
+                    direction4();
+                    break;
+                case 4:
+                    direction1();
+                    break;
+            }
+            KeyHandler.upPressed = false;
+
         }
         if (KeyHandler.downPressed) {
             b[0].y += Block.SIZE;

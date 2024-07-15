@@ -1,11 +1,9 @@
-package Java_Git.Progetti.Prove_Grafiche.Java_Swing.src;
+//package Java_Git.Progetti.Prove_Grafiche.Java_Swing.src;
 
 import javax.swing.JFrame;
 
-public class PrimoFrame extends TutorialFrame 
-{
-    public PrimoFrame()
-    {
+public class PrimoFrame extends TutorialFrame {
+    public PrimoFrame() {
         // Creazione del frame
         JFrame frame = new JFrame("Prima Finestra");
 

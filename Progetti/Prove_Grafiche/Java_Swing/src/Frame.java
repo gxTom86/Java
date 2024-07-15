@@ -13,7 +13,7 @@ public class Frame extends JFrame {
 
         setLayout(new BorderLayout());
 
-        textArea = new JTextArea();  // Correzione: Usa JTextArea invece di JFrameArea
+        textArea = new JTextArea(); // Correzione: Usa JTextArea invece di JFrameArea
         button = new JButton("Eccomi");
 
         add(textArea, BorderLayout.CENTER);
